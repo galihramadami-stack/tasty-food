@@ -1,32 +1,39 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes - Tasty Food Project
 |--------------------------------------------------------------------------
 */
 
-// Rute untuk Halaman Utama (Home)
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/home', [HomeController::class, 'index']);
+// Halaman Utama (Root)
+Route::get('/', function () {
+    return view('welcome');
+})->name('index');
 
-// Rute untuk Halaman Tentang (Memperbaiki Error 404)
+// Halaman Beranda / Home
+Route::get('/home', function () {
+    return view('home');
+})->name('home'); // Ini yang tadi menyebabkan error karena belum didefinisikan
+
+// Halaman Tentang Kami
 Route::get('/tentang', function () {
     return view('tentang');
 })->name('tentang');
 
-// Rute tambahan (Opsional, siapkan jika nanti membuat filenya)
+// Halaman Berita
 Route::get('/berita', function () {
     return view('berita');
 })->name('berita');
 
+// Halaman Galeri
 Route::get('/galeri', function () {
     return view('galeri');
 })->name('galeri');
 
+// Halaman Kontak
 Route::get('/kontak', function () {
     return view('kontak');
 })->name('kontak');

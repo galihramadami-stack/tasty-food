@@ -1,170 +1,276 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="id">
 
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Food | Healthy & Delicious</title>
 
-<nav
-    class="w-full flex justify-between items-center py-5 px-8 md:px-20 bg-black/95 backdrop-blur-sm text-white sticky top-0 z-50 shadow-sm">
-    <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Footer Styles */
+        .footer-link {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+
+        .social-box {
+            width: 40px;
+            height: 40px;
+            background: #222;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-box:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Utility untuk grid footer agar tidak pecah tanpa bootstrap full */
+        .footer-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr 2fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <nav class="flex justify-between items-center px-10 py-8 max-w-7xl mx-auto">
+        <div class="text-2xl font-extrabold tracking-tighter italic">
+            TASTY FOOD
         </div>
-        <a href="/" class="text-xl font-black tracking-tighter uppercase">Tasty Food</a>
-    </div>
+        <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+            <a href="{{ url('/home') }}" class="text-black border-b-2 border-black pb-1">Home</a>
+            <a href="{{ url('/tentang') }}" class="hover:text-black transition">Tentang</a>
+            <a href="{{ url('/berita') }}" class="hover:text-black transition">Berita</a>
+            <a href="#" class="hover:text-black transition">Galeri</a>
+            <a href="#" class="hover:text-black transition">Kontak</a>
+        </div>
+    </nav>
 
-    <div class="hidden md:flex items-center space-x-12">
-        <a href="/"
-            class="text-xs font-bold uppercase tracking-[0.2em] hover:text-yellow-500 transition-colors duration-300">Home</a>
-        <a href="/tentang"
-            class="text-xs font-bold uppercase tracking-[0.2em] hover:text-yellow-500 transition-colors duration-300">Tentang</a>
-        <a href="/berita"
-            class="text-xs font-bold uppercase tracking-[0.2em] hover:text-yellow-500 transition-colors duration-300">Berita</a>
-        <a href="/galeri"
-            class="text-xs font-bold uppercase tracking-[0.2em] hover:text-yellow-500 transition-colors duration-300">Galeri</a>
-        <a href="/kontak"
-            class="text-xs font-bold uppercase tracking-[0.2em] hover:text-yellow-500 transition-colors duration-300">Kontak</a>
-    </div>
-
-    <button class="md:hidden p-2 hover:bg-white/10 rounded-lg transition">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-</nav>
-
-<section class="relative min-h-[85vh] flex items-center px-8 md:px-20 py-12 overflow-hidden bg-white">
-    <div class="max-w-2xl z-10">
-        <span
-            class="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-[10px] font-black uppercase tracking-widest rounded-full mb-6">Premium
-            Taste</span>
-        <h2 class="text-7xl md:text-8xl font-black leading-[0.9] mb-6 uppercase tracking-tighter">
-            Healthy <br>
-            <span class="text-transparent" style="-webkit-text-stroke: 1.5px black;">Tasty Food</span>
-        </h2>
-        <p class="text-gray-500 mb-10 leading-relaxed text-lg max-w-md">
-            Pengalaman kuliner terbaik dengan bahan organik pilihan untuk menjaga kesehatan tubuh Anda setiap hari.
-        </p>
-        <div class="flex gap-4">
-            <a href="/tentang"
-                class="bg-black text-white px-10 py-4 uppercase text-[11px] font-black tracking-[0.2em] hover:scale-105 active:scale-95 transition transform shadow-2xl">
+    <header class="relative flex flex-col md:flex-row items-center px-10 py-12 max-w-7xl mx-auto min-h-[600px]">
+        <div class="md:w-1/2 z-10">
+            <div class="w-16 h-1 bg-black mb-6"></div>
+            <h1 class="text-5xl md:text-7xl font-light text-gray-400 leading-none uppercase">Healthy</h1>
+            <h2 class="text-6xl md:text-8xl font-black text-black uppercase leading-[0.8] mb-8 tracking-tighter">Tasty
+                Food</h2>
+            <p class="text-gray-500 text-sm leading-relaxed max-w-md mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo, dui
+                diam convallis arcu, eget consectetur ex sem.
+            </p>
+            <a href="{{ url('/tentang') }}"
+                class="inline-block bg-black text-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition shadow-xl text-center">
                 Tentang Kami
             </a>
         </div>
-    </div>
 
-    <div class="absolute -right-20 top-1/2 -translate-y-1/2 w-1/2 hidden md:block animate-pulse duration-[3000ms]">
-        <img src="{{ asset('images/img-4.png') }}" class="w-full h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.2)]"
-            alt="Hero Food">
-    </div>
-</section>
-
-<section class="py-32 text-center px-8 bg-white">
-    <h3 class="text-sm font-black uppercase tracking-[0.4em] text-gray-400 mb-6">Discover Our Story</h3>
-    <h4 class="text-4xl font-bold mb-8 uppercase tracking-tighter">Kualitas Adalah <br> Prioritas Utama Kami</h4>
-    <p class="max-w-xl mx-auto text-gray-500 leading-loose mb-12 italic text-lg">
-        "Makanan bukan hanya soal rasa, tapi soal bagaimana ia memberikan energi dan kebahagiaan bagi mereka yang
-        menikmatinya."
-    </p>
-    <div class="w-12 h-1 bg-black mx-auto"></div>
-</section>
-
-<section class="relative py-40 bg-neutral-900 overflow-hidden">
-    <div class="absolute inset-0 opacity-20"
-        style="background-image: url('{{ asset('images/Group 70.png') }}'); background-size: cover;"></div>
-
-    <div class="container mx-auto px-8 relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        @foreach(['img-1.png', 'img-2.png', 'img-3.png', 'img-4.png'] as $img)
-        <div
-            class="bg-white/5 backdrop-blur-md p-10 rounded-2xl border border-white/10 text-center hover:bg-white hover:text-black transition-all duration-500 group">
-            <img src="{{ asset('images/'.$img) }}"
-                class="w-20 h-20 mx-auto rounded-full mb-8 border-2 border-white/20 group-hover:border-black/10 transition-colors object-cover">
-            <h5 class="font-black text-xs uppercase tracking-widest mb-4">Quality Control</h5>
-            <p class="text-xs opacity-60 group-hover:opacity-100">Standar internasional dalam pengolahan setiap menu
-                kami.</p>
-        </div>
-        @endforeach
-    </div>
-</section>
-
-<section class="py-32 px-8 md:px-20 bg-gray-50">
-    <div class="flex justify-between items-end mb-16">
-        <div>
-            <h3 class="text-4xl font-black uppercase tracking-tighter">Berita Terbaru</h3>
-            <div class="w-12 h-1 bg-yellow-500 mt-2"></div>
-        </div>
-        <a href="#" class="text-xs font-bold uppercase tracking-widest border-b-2 border-black">Lihat Semua</a>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        <div class="lg:col-span-7 group cursor-pointer">
-            <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] mb-8">
-                <img src="{{ asset('images/fathul-abrar-T-qI_MI2EMA-unsplash.jpg') }}"
-                    class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000">
-            </div>
-            <span class="text-yellow-600 font-black text-[10px] uppercase tracking-widest">Featured Post</span>
-            <h4 class="text-3xl font-bold mt-4 mb-4 group-hover:text-yellow-600 transition">Cara Mengolah Sayuran Agar
-                Vitamin Tetap Terjaga</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">Rahasia dapur professional dalam menjaga nutrisi makanan
-                tetap maksimal...</p>
-        </div>
-
-        <div class="lg:col-span-5 flex flex-col gap-8">
-            @foreach(['img-1.png', 'img-2.png'] as $img_sm)
+        <div class="md:w-1/2 relative mt-16 md:mt-0 flex justify-center">
             <div
-                class="flex gap-6 items-center p-4 rounded-2xl hover:bg-white hover:shadow-xl transition duration-500 group cursor-pointer">
-                <img src="{{ asset('images/'.$img_sm) }}" class="w-32 h-32 rounded-2xl object-cover shrink-0">
-                <div>
-                    <h5 class="font-bold text-lg leading-tight group-hover:text-yellow-600 transition">Tips Hidup Sehat
-                        Dengan Diet Karbo</h5>
-                    <p class="text-xs text-gray-400 mt-2">Baca Selengkapnya →</p>
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gray-100 rounded-full -z-10">
+            </div>
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Healthy Food"
+                class="w-full max-w-[500px] aspect-square object-cover rounded-full shadow-2xl border-[15px] border-white">
+        </div>
+    </header>
+
+    <section class="py-24 px-10 text-center max-w-4xl mx-auto">
+        <h3 class="text-3xl font-extrabold uppercase tracking-widest mb-8">Tentang Kami</h3>
+        <p class="text-gray-600 leading-loose text-lg italic px-4">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo, dui
+            diam convallis arcu, eget consectetur ex sem. Nullam vitae dignissim neque, sed pulvinar sem."
+        </p>
+        <div class="mt-8 flex justify-center">
+            <div class="w-12 h-1 bg-black"></div>
+        </div>
+    </section>
+
+    <section class="relative py-40 px-10 min-h-[600px] flex items-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+                class="w-full h-full object-cover brightness-[0.25]">
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10 w-full">
+            @php
+            $cards = [
+            ['title' => 'Salad Segar', 'img' => 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd'],
+            ['title' => 'Sayuran', 'img' => 'https://images.unsplash.com/photo-1490645935967-10de6ba17061'],
+            ['title' => 'COFFEE', 'img' => 'https://images.unsplash.com/photo-1547592166-23ac45744acd'],
+            ['title' => 'LOREM IPSUM', 'img' => 'https://images.unsplash.com/photo-1467003909585-2f8a72700288']
+            ];
+            @endphp
+
+            @foreach($cards as $card)
+            <div
+                class="bg-white p-8 pt-20 rounded-[40px] shadow-2xl text-center relative mt-16 md:mt-0 group hover:-translate-y-2 transition-transform duration-300">
+                <div
+                    class="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 border-[8px] border-white rounded-full overflow-hidden shadow-lg bg-gray-200">
+                    <img src="{{ $card['img'] }}?w=400&auto=format&fit=crop" class="w-full h-full object-cover">
                 </div>
+                <h4 class="font-black text-xl mb-4 tracking-tight uppercase">{{ $card['title'] }}</h4>
+                <p class="text-gray-400 text-xs leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.
+                </p>
             </div>
             @endforeach
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-32 px-8 md:px-20 bg-white">
-    <h3 class="text-center text-4xl font-black uppercase tracking-tighter mb-16">Our Gallery</h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="{{ asset('images/img-1.png') }}" class="w-full h-72 object-cover rounded-3xl">
-        <img src="{{ asset('images/img-2.png') }}" class="w-full h-72 object-cover rounded-3xl mt-12">
-        <img src="{{ asset('images/img-3.png') }}" class="w-full h-72 object-cover rounded-3xl">
-        <img src="{{ asset('images/img-4.png') }}" class="w-full h-72 object-cover rounded-3xl mt-12">
-    </div>
-</section>
+    <section class="py-24 max-w-7xl mx-auto px-10">
+        <h3 class="text-3xl font-extrabold uppercase tracking-widest text-center mb-16">Berita Kami</h3>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/2 relative group overflow-hidden rounded-[40px] shadow-2xl h-[550px]">
+                <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af"
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-10 flex flex-col justify-end text-white">
+                    <h4 class="text-2xl font-extrabold leading-tight uppercase mb-4">Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit</h4>
+                    <p class="text-sm text-gray-300 mb-6 line-clamp-2">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
+                    <a href="#" class="text-yellow-400 font-bold text-xs uppercase tracking-widest">Baca Selengkapnya
+                        →</a>
+                </div>
+            </div>
 
-<footer class="bg-black text-white pt-32 pb-12 px-8 md:px-20">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20 border-b border-white/10 pb-20">
-        <div class="col-span-1 md:col-span-1">
-            <h4 class="text-2xl font-black mb-8">Tasty Food</h4>
-            <p class="text-gray-500 text-sm leading-loose">Menghadirkan kelezatan bintang lima langsung ke meja makan
-                Anda setiap hari.</p>
+            <div class="md:w-1/2 grid grid-cols-2 gap-6">
+                @for($i = 1; $i <= 4; $i++) <div
+                    class="bg-white border border-gray-100 rounded-[35px] overflow-hidden hover:shadow-2xl transition-shadow p-5 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=400"
+                        class="w-full h-36 object-cover rounded-[25px] mb-4">
+                    <h5 class="font-bold text-sm uppercase mb-2">Lorem Ipsum</h5>
+                    <p class="text-[10px] text-gray-500 mb-4 line-clamp-2">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit.</p>
+                    <a href="#" class="text-yellow-500 font-extrabold text-[10px] uppercase mt-auto">Baca
+                        Selengkapnya</a>
+            </div>
+            @endfor
         </div>
-        <div>
-            <h5 class="font-bold text-xs uppercase tracking-[0.3em] text-gray-300 mb-8">Navigation</h5>
-            <ul class="text-gray-500 text-xs space-y-4 font-bold uppercase tracking-widest">
-                <li><a href="#" class="hover:text-white transition">Menu Card</a></li>
-                <li><a href="#" class="hover:text-white transition">Order Now</a></li>
-                <li><a href="#" class="hover:text-white transition">Locations</a></li>
-            </ul>
         </div>
-        <div>
-            <h5 class="font-bold text-xs uppercase tracking-[0.3em] text-gray-300 mb-8">Support</h5>
-            <ul class="text-gray-500 text-xs space-y-4 font-bold uppercase tracking-widest">
-                <li><a href="#" class="hover:text-white transition">Help Center</a></li>
-                <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-                <li><a href="#" class="hover:text-white transition">Terms of Use</a></li>
-            </ul>
-        </div>
-        <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-            <h5 class="font-bold text-xs uppercase tracking-[0.3em] text-white mb-4">Newsletter</h5>
-            <input type="text" placeholder="Email Address"
-                class="bg-transparent border-b border-white/20 w-full py-2 text-sm focus:outline-none focus:border-yellow-500 transition mb-4">
-            <button class="text-[10px] font-black uppercase tracking-widest text-yellow-500">Subscribe →</button>
-        </div>
-    </div>
-    <div class="text-center text-[10px] font-bold uppercase tracking-[0.5em] text-gray-600">
-        © 2026 Tasty Food Digital Experience. All Rights Reserved.
-    </div>
-</footer>
+    </section>
 
-@endsection
+    <section class="py-24 max-w-7xl mx-auto px-10">
+        <h3 class="text-3xl font-extrabold uppercase tracking-widest text-center mb-16">Galeri Kami</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            @php
+            $gallery = [
+            'https://images.unsplash.com/photo-1504674900247-0877df9cc836',
+            'https://images.unsplash.com/photo-1543353071-873f17a7a088',
+            'https://images.unsplash.com/photo-1555939594-58d7cb561ad1',
+            'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe',
+            'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38',
+            'https://images.unsplash.com/photo-1547592166-23ac45744acd'
+            ];
+            @endphp
+
+            @foreach($gallery as $url)
+            <div class="overflow-hidden rounded-[30px] group shadow-lg aspect-[4/3]">
+                <img src="{{ $url }}?w=600&auto=format&fit=crop"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Tasty Food Gallery">
+            </div>
+            @endforeach
+        </div>
+        <div class="mt-16 text-center">
+            <button
+                class="bg-black text-white px-16 py-4 text-xs font-bold uppercase tracking-widest shadow-xl hover:bg-gray-900 transition">
+                Lihat Lebih Banyak
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white pt-20 pb-10 px-10 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="footer-grid">
+                <div>
+                    <h4 class="text-2xl font-black italic uppercase mb-6 tracking-tighter">Tasty Food</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8 pr-10">
+                        Tempat terbaik untuk mengeksplorasi dunia kuliner nusantara dan internasional dengan ulasan
+                        mendalam dari para ahli masak.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-box"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h6 class="font-bold text-white uppercase mb-8 tracking-widest text-sm">Useful links</h6>
+                    <ul class="space-y-4 list-none p-0">
+                        <li><a href="#" class="footer-link">Hewan</a></li>
+                        <li><a href="#" class="footer-link">Galeri</a></li>
+                        <li><a href="#" class="footer-link">Testimonial</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h6 class="font-bold text-white uppercase mb-8 tracking-widest text-sm">Privacy</h6>
+                    <ul class="space-y-4 list-none p-0">
+                        <li><a href="#" class="footer-link">Karir</a></li>
+                        <li><a href="#" class="footer-link">Tentang Kami</a></li>
+                        <li><a href="#" class="footer-link">Kontak Kami</a></li>
+                        <li><a href="#" class="footer-link">Servis</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h6 class="font-bold text-white uppercase mb-8 tracking-widest text-sm">Contact Info</h6>
+                    <ul class="space-y-5 list-none p-0">
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="bi bi-envelope-fill mr-4 text-white"></i> tastyfood@gmail.com
+                        </li>
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="bi bi-telephone-fill mr-4 text-white"></i> +62 89528446317
+                        </li>
+                        <li class="flex items-start text-gray-400 text-sm">
+                            <i class="bi bi-geo-alt-fill mr-4 text-white"></i> Kota Bandung, Jawa Barat
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 mt-20 pt-8 text-center text-gray-500 text-[10px] uppercase tracking-widest">
+                COPYRIGHT ©2026 ALL RIGHTS RESERVED | TASTY FOOD
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

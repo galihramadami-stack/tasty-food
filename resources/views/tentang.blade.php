@@ -1,137 +1,139 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="id">
 
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Tasty Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
 
-<nav class="w-full flex justify-between items-center py-6 px-10 md:px-20 bg-black text-white sticky top-0 z-50">
-    <h1 class="text-2xl font-bold tracking-tighter uppercase">Tasty Food</h1>
-    <div class="hidden md:flex space-x-8 uppercase text-sm font-bold tracking-widest">
-        <a href="/" class="hover:text-gray-400 transition">Home</a>
-        <a href="/tentang" class="text-gray-400">Tentang</a>
-        <a href="/berita" class="hover:text-gray-400 transition">Berita</a>
-        <a href="/galeri" class="hover:text-gray-400 transition">Galeri</a>
-        <a href="/kontak" class="hover:text-gray-400 transition">Kontak</a>
-    </div>
-</nav>
+<body class="bg-white text-gray-800">
 
-<section class="relative h-[60vh] flex items-center px-10 md:px-20 overflow-hidden">
-    <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/monika-grabkowska-P1aohbiT-EY-unsplash.jpg') }}" class="w-full h-full object-cover" alt="Tentang Kami Hero">
-        <div class="absolute inset-0 bg-black/40"></div>
-    </div>
+    <header class="relative h-[350px] bg-gray-900">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
 
-    <div class="relative z-10">
-        <h2 class="text-5xl md:text-6xl font-bold text-white uppercase tracking-tighter">
-            Tentang Kami
-        </h2>
-    </div>
-</section>
+        <img src="https://picsum.photos/id/488/1200/500" class="absolute inset-0 w-full h-full object-cover z-0">
 
-<section class="py-24 px-10 md:px-20 bg-white">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div class="space-y-6">
-            <h3 class="text-3xl font-bold uppercase tracking-tighter">Tasty Food</h3>
-            <p class="font-bold text-gray-800 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo, dui
-                diam convallis arcu, eget consectetur ex sem eget lacus.
-            </p>
-            <p class="text-gray-500 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo, dui
-                diam convallis arcu, eget consectetur ex sem eget lacus. Nullam vitae dignissim neque, vel luctus ex.
-                Fusce sit amet viverra ante.
-            </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <img src="{{ asset('images/brooke-lark-oaz0raysASk-unsplash.jpg') }}" class="w-full h-80 object-cover rounded-2xl shadow-xl"
-                alt="Gallery 1">
-            <img src="{{ asset('images/sebastian-coman-photography-eBmyH7oO5wY-unsplash.jpg') }}" class="w-full h-80 object-cover rounded-2xl shadow-xl mt-12"
-                alt="Gallery 2">
-        </div>
-    </div>
-</section>
+        <div class="relative z-20 max-w-6xl mx-auto px-6 h-full flex flex-col">
+            <nav class="flex justify-between items-center py-6">
+                <div class="text-xl font-bold text-white uppercase">Tasty Food</div>
+                <div class="space-x-6 text-sm font-semibold text-white/90 uppercase">
+                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/tentang') }}" class="border-b-2 border-white">Tentang</a>
+                    <a href="{{ url('/berita') }}">Berita</a>
+                    <a href="#">Galeri</a>
+                    <a href="#">Kontak</a>
+                </div>
+            </nav>
 
-<section class="py-24 px-10 md:px-20 bg-gray-50">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div class="grid grid-cols-2 gap-4 order-2 md:order-1">
-            <img src="{{ asset('images/fathul-abrar-T-qI_MI2EMA-unsplash.jpg') }}" class="w-full h-64 object-cover rounded-2xl shadow-lg"
-                alt="Visi 1">
-            <img src="{{ asset('images/michele-blackwell-rAyCBQTH7ws-unsplash.jpg') }}" class="w-full h-64 object-cover rounded-2xl shadow-lg"
-                alt="Visi 2">
-        </div>
-        <div class="space-y-6 order-1 md:order-2">
-            <h3 class="text-3xl font-bold uppercase tracking-tighter">Visi</h3>
-            <p class="text-gray-600 leading-loose">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque magna aliquet cursus tempus.
-                Duis viverra metus et turpis elementum elementum. Aliquam rutrum placerat tellus et suscipit. Curabitur
-                facilisis lectus vitae eros malesuada eleifend. Mauris eget tellus odio.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="py-24 px-10 md:px-20 bg-white">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div class="space-y-6">
-            <h3 class="text-3xl font-bold uppercase tracking-tighter">Misi</h3>
-            <p class="text-gray-600 leading-loose">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque magna aliquet cursus tempus.
-                Duis viverra metus et turpis elementum elementum. Aliquam rutrum placerat tellus et suscipit. Curabitur
-                facilisis lectus vitae eros malesuada eleifend. Mauris eget tellus odio.
-            </p>
-        </div>
-        <div>
-            <img src="{{ asset('images/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-80 object-cover rounded-3xl shadow-2xl"
-                alt="Misi Image">
-        </div>
-    </div>
-</section>
-
-<footer class="bg-black text-white pt-24 pb-12 px-10 md:px-20">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-800 pb-16 mb-8">
-        <div class="space-y-6">
-            <h4 class="text-2xl font-bold uppercase tracking-tighter">Tasty Food</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed nisl elementum, madius nisli.
-            </p>
-            <div class="flex space-x-4">
-                <a href="#"
-                    class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">f</a>
-                <a href="#"
-                    class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition">t</a>
+            <div class="mt-auto mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white uppercase">Tentang Kami</h1>
             </div>
         </div>
+    </header>
 
-        <div>
-            <h5 class="font-bold mb-8">Useful links</h5>
-            <ul class="text-gray-400 space-y-4 text-sm">
-                <li><a href="#" class="hover:text-white transition">Blog</a></li>
-                <li><a href="#" class="hover:text-white transition">Hewan</a></li>
-                <li><a href="#" class="hover:text-white transition">Galeri</a></li>
-                <li><a href="#" class="hover:text-white transition">Testimonial</a></li>
-            </ul>
+    <main class="max-w-6xl mx-auto px-6 py-20 space-y-24">
+
+        <section class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-2xl font-bold uppercase mb-6">Tasty Food</h2>
+                <div class="text-sm text-gray-600 leading-relaxed space-y-4">
+                    <p class="font-semibold text-gray-900">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum
+                        commodo, dui diam convallis arcu.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum
+                        commodo, dui diam convallis arcu, eget consectetur ex sem eget lacus. Nullam vitae dignissim
+                        neque, vel luctus ex.
+                    </p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <img src="https://picsum.photos/id/493/300/400" class="w-1/2 h-80 object-cover rounded-3xl shadow-md">
+                <img src="https://picsum.photos/id/292/300/400"
+                    class="w-1/2 h-80 object-cover rounded-3xl shadow-md mt-10">
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-2 gap-4 order-2 md:order-1">
+                <img src="https://picsum.photos/id/429/300/300" class="w-full h-48 object-cover rounded-2xl">
+                <img src="https://picsum.photos/id/431/300/300" class="w-full h-48 object-cover rounded-2xl">
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-2xl font-bold uppercase mb-6">Visi</h2>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque magna aliquet cursus
+                    tempus. Duis viverra metus et turpis elementum elementum. Aliquam rutrum placerat tellus et
+                    suscipit.
+                </p>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-2xl font-bold uppercase mb-6">Misi</h2>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque magna aliquet cursus
+                    tempus. Duis viverra metus et turpis elementum elementum. Aliquam rutrum placerat tellus et
+                    suscipit.
+                </p>
+            </div>
+            <div>
+                <img src="https://picsum.photos/id/163/600/350" class="w-full h-72 object-cover rounded-3xl shadow-md">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white pt-16 pb-8">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+                <h4 class="font-bold uppercase mb-6">Tasty Food</h4>
+                <p class="text-xs text-gray-400 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus ornare, augue eu rutrum commodo.</p>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase mb-6 text-sm">Useful Links</h4>
+                <ul class="text-xs text-gray-400 space-y-3">
+                    <li>Blog</li>
+                    <li>Hewan</li>
+                    <li>Galeri</li>
+                    <li>Testimonial</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase mb-6 text-sm">Privacy</h4>
+                <ul class="text-xs text-gray-400 space-y-3">
+                    <li>Karir</li>
+                    <li>Tentang Kami</li>
+                    <li>Kontak Kami</li>
+                    <li>Servis</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase mb-6 text-sm">Contact Info</h4>
+                <ul class="text-xs text-gray-400 space-y-4">
+                    <li>✉ tastyfood@gmail.com</li>
+                    <li>✆ +62 812 3456 7890</li>
+                    <li>📍 Kota Bandung, Jawa Barat</li>
+                </ul>
+            </div>
         </div>
-
-        <div>
-            <h5 class="font-bold mb-8">Privacy</h5>
-            <ul class="text-gray-400 space-y-4 text-sm">
-                <li><a href="#" class="hover:text-white transition">Karir</a></li>
-                <li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
-                <li><a href="#" class="hover:text-white transition">Kontak Kami</a></li>
-                <li><a href="#" class="hover:text-white transition">Servis</a></li>
-            </ul>
+        <div
+            class="mt-16 text-center text-[10px] text-gray-600 border-t border-gray-800 pt-8 uppercase tracking-widest">
+            Copyright ©2023 All rights reserved
         </div>
+    </footer>
 
-        <div>
-            <h5 class="font-bold mb-8">Contact Info</h5>
-            <ul class="text-gray-400 space-y-4 text-sm">
-                <li class="flex items-center gap-3">📧 tastyfood@gmail.com</li>
-                <li class="flex items-center gap-3">📞 +62 812 3456 7890</li>
-                <li class="flex items-center gap-3">📍 Kota Bandung, Jawa Barat</li>
-            </ul>
-        </div>
-    </div>
-    <p class="text-center text-gray-500 text-xs uppercase tracking-widest">
-        Copyright ©2023 All rights reserved
-    </p>
-</footer>
+</body>
 
-@endsection
+</html>
