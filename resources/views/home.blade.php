@@ -78,8 +78,8 @@
             <a href="{{ url('/home') }}" class="text-black border-b-2 border-black pb-1">Home</a>
             <a href="{{ url('/tentang') }}" class="hover:text-black transition">Tentang</a>
             <a href="{{ url('/berita') }}" class="hover:text-black transition">Berita</a>
-            <a href="#" class="hover:text-black transition">Galeri</a>
-            <a href="#" class="hover:text-black transition">Kontak</a>
+            <a href="{{ url('/galeri') }}" class="hover:text-black transition">Galeri</a>
+            <a href="{{ url('/kontak') }}" class="hover:text-black transition">Kontak</a>
         </div>
     </nav>
 
@@ -103,7 +103,7 @@
             <div
                 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gray-100 rounded-full -z-10">
             </div>
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Healthy Food"
+            <img src="images/img-4.png" alt="Healthy Food"
                 class="w-full max-w-[500px] aspect-square object-cover rounded-full shadow-2xl border-[15px] border-white">
         </div>
     </header>
